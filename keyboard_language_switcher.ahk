@@ -56,16 +56,51 @@ CheckWindow() {
         ; Check if the active program is "Telegram.exe"
         if (activeProgram = "Telegram.exe") {
             ; MsgBox("Let's change language to Persian")
+            currentLanguage := GetInputLangName(GetInputLangID())
+            ; MsgBox("Current Language", currentLanguage)
+            if (currentLanguage == "Persian"){
+                              ; MsgBox("not need to toggle")
+               return
+            }
             ; Simulate pressing Ctrl + 2 to switch to Persian
             Send("^2")  ; Send Ctrl + 2 keystroke
         }
                 ; Check if the active program is "Code.exe" or "Slack.exe"
         if (activeProgram = "Code.exe" || activeProgram = "Slack.exe") {
             ; MsgBox("Let's change language to English")
+            currentLanguage := GetInputLangName(GetInputLangID())
+            ; MsgBox("Current Language", currentLanguage)
+            if (currentLanguage == "English"){
+                              ; MsgBox("not need to toggle")
+               return
+            }
             ; Simulate pressing Ctrl + 1 to switch to English
             Send("^1")  ; Send Ctrl + 2 keystroke
         }
     }
 }
 
+; MsgBox GetInputLangName(GetInputLangID()), 'Input language', 'Iconi'
 
+GetInputLangID(hWnd := '') {
+    (!hWnd) && hWnd := WinActive('A')
+    threadId := DllCall('GetWindowThreadProcessId', 'Ptr', hWnd, 'UInt', 0)
+    if (threadId = 0) {
+        MsgBox("Failed to retrieve thread ID.")
+        return ""
+    }
+    lyt := DllCall('GetKeyboardLayout', 'Ptr', threadId, 'UInt')
+    if (lyt = 0) {
+        MsgBox("Failed to retrieve keyboard layout.")
+        return ""
+    }
+    Return Format('{:#x}', lyt & 0x3FFF)
+}
+
+GetInputLangName(langId)  {
+ Static LOCALE_SENGLANGUAGE := 0x1001
+ charCount := DllCall('GetLocaleInfo', 'UInt', langId, 'UInt', LOCALE_SENGLANGUAGE, 'UInt', 0, 'UInt', 0)
+ localeSig := Buffer(size := charCount << 1)
+ DllCall('GetLocaleInfo', 'UInt', langId, 'UInt', LOCALE_SENGLANGUAGE, 'Ptr', localeSig, 'UInt', size)
+ Return StrGet(localeSig)
+}
