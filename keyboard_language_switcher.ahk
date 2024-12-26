@@ -66,7 +66,7 @@ CheckWindow() {
             Send("^2")  ; Send Ctrl + 2 keystroke
         }
                 ; Check if the active program is "Code.exe" or "Slack.exe"
-        if (activeProgram = "Code.exe" || activeProgram = "Slack.exe") {
+        if (activeProgram = "Code.exe" || activeProgram = "Slack.exe" || activeProgram = "cmd.exe") {
             ; MsgBox("Let's change language to English")
             currentLanguage := GetInputLangName(GetInputLangID())
             ; MsgBox("Current Language", currentLanguage)
