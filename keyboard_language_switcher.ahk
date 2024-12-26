@@ -59,7 +59,7 @@ CheckWindow() {
             ; Simulate pressing Ctrl + 2 to switch to Persian
             Send("^2")  ; Send Ctrl + 2 keystroke
         }
-                ; Check if the active program is "Code.exe"
+                ; Check if the active program is "Code.exe" or "Slack.exe"
         if (activeProgram = "Code.exe" || activeProgram = "Slack.exe") {
             ; MsgBox("Let's change language to English")
             ; Simulate pressing Ctrl + 1 to switch to English
