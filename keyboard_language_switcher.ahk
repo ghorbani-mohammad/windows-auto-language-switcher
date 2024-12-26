@@ -50,14 +50,20 @@ CheckWindow() {
     ; Check if the active program has changed
     if (activeProgram != previousProgram) {
         ; Do something when the program changes
-        MsgBox("Active Program: " activeProgram)
+        ; MsgBox("Active Program: " activeProgram)
         previousProgram := activeProgram  ; Update previousProgram with the current program
 
         ; Check if the active program is "Telegram.exe"
         if (activeProgram = "Telegram.exe") {
-            MsgBox("Let's change language to Persian")
+            ; MsgBox("Let's change language to Persian")
             ; Simulate pressing Ctrl + 2 to switch to Persian
             Send("^2")  ; Send Ctrl + 2 keystroke
+        }
+                ; Check if the active program is "Code.exe"
+        if (activeProgram = "Code.exe") {
+            ; MsgBox("Let's change language to English")
+            ; Simulate pressing Ctrl + 1 to switch to English
+            Send("^1")  ; Send Ctrl + 2 keystroke
         }
     }
 }
