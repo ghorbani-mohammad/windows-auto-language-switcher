@@ -4,28 +4,26 @@ This repository contains an AutoHotkey script that automatically switches your k
 
 ### Features
 
-    Automatic Language Switching: The script automatically switches between languages (e.g., English and Persian) based on the active window's title.
-    Easy to Customize: You can easily modify the script to work with other languages or applications.
-    Seamless Experience: Switch languages without the need for manual input, saving you time and effort.
+    - Automatic Language Switching: The script automatically switches between languages (e.g., English and Persian) based on the active window's title.
+    - Easy to Customize: You can easily modify the script to work with other languages or applications.
+    - Seamless Experience: Switch languages without the need for manual input, saving you time and effort.
 
 ### Prerequisites
 
 Before using this script, you need to have the following installed on your system:
-
-    AutoHotkey v2.x: A powerful scripting language for automating tasks on Windows.
-        Download AutoHotkey
-    Keyboard Languages: This script works with any two languages you prefer. By default, it supports English and Persian.
+    
+    - Download AutoHotkey v2.x: A powerful scripting language for automating tasks on Windows. 
+    - Keyboard Languages: This script works with any two languages you prefer. By default, it supports English and Persian.
 
 ### Installation
 
-    Download AutoHotkey:
-        Download and install AutoHotkey from here.
+    - Download AutoHotkey:
+      Download and install AutoHotkey from here.
 
-    Clone the Repository: Clone this repository to your local machine using Git:
+    - Clone the Repository: Clone this repository to your local machine using Git:
+      git clone https://github.com/ghorbani-mohammad/windows-auto-language-switcher/.git
 
-    git clone https://github.com/ghorbani-mohammad/windows-auto-language-switcher/.git
-
-    Run the Script:
+    - Run the Script:
         Open the cloned folder and find the keyboard_language_switcher.ahk file.
         Right-click the file and choose Run Script.
         The script will now be running in the background, automatically switching the language when you switch between applications.
