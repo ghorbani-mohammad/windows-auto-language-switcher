@@ -23,10 +23,10 @@ Before using this script, you need to have the following installed on your syste
 
     Clone the Repository: Clone this repository to your local machine using Git:
 
-    git clone https://github.com/ghorbani-mohammad/AutoHotkey-Language-Switcher.git
+    git clone https://github.com/ghorbani-mohammad/windows-auto-language-switcher/.git
 
     Run the Script:
-        Open the cloned folder and find the LanguageSwitcher.ahk file.
+        Open the cloned folder and find the keyboard_language_switcher.ahk file.
         Right-click the file and choose Run Script.
         The script will now be running in the background, automatically switching the language when you switch between applications.
 
